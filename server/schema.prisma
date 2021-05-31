@@ -1,0 +1,17 @@
+datasource postgresql {
+    provider = "postgresql"
+    url      = env("DB_URL")
+}
+
+generator prisma_client {
+    provider = "prisma-client-js"
+}
+
+model Banner {
+    id           String   @id @default(cuid())
+    name         String
+    title        String
+    version_no   Int      @default(1)
+    version_user String   @default("SYSTEM")
+    version_date DateTime @updatedAt
+}

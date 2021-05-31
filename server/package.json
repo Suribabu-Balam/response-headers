@@ -1,0 +1,49 @@
+{
+    "name": "response-headers",
+    "license": "UNLICENSED",
+    "version": "0.0.1",
+    "description": "Response Headers",
+    "dependencies": {
+        "@nexus/schema": "0.18.0",
+        "@prisma/client": "2.11.0",
+        "@types/randomatic": "^3.1.0",
+        "apollo-server-express": "^2.19.0",
+        "exceljs": "3.9.0",
+        "express": "^4.17.1",
+        "global-dirs": "^2.0.1",
+        "graphql": "15.4.0",
+        "graphql-add-middleware": "^0.3.7",
+        "graphql-scalars": "^1.4.1",
+        "nexus-plugin-prisma": "0.24.0",
+        "pdf-creator-node": "^1.4.1",
+        "phantomjs-prebuilt": "^2.1.16",
+        "randomatic": "^3.1.1"
+    },
+    "scripts": {
+        "format": "npx prettier --write './**/*.{ts,md}'",
+        "dev": "ts-node-dev api/app.ts",
+        "build": "npm run generate && tsc",
+        "generate": "prisma generate && ts-node --transpile-only api/schema.ts",
+        "lint": "eslint . --ext .ts"
+    },
+    "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "trailingComma": "all",
+        "printWidth": 140,
+        "formatOnSave": true,
+        "tabWidth": 4
+    },
+    "devDependencies": {
+        "@prisma/cli": "2.11.0",
+        "@types/minio": "^7.0.7",
+        "@typescript-eslint/eslint-plugin": "^4.11.0",
+        "@typescript-eslint/parser": "^4.11.0",
+        "env-cmd": "^10.1.0",
+        "eslint": "^7.16.0",
+        "prettier": "^2.0.5",
+        "ts-node": "^9.0.0",
+        "ts-node-dev": "^1.0.0-pre.62",
+        "typescript": "^4.0.2"
+    }
+}
